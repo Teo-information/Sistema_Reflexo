@@ -37,19 +37,19 @@ Este módulo maneja la gestión de citas y sus estados, incluyendo la creación,
    * 1.1.4 Actualización en tiempo real.
 
 2. **`src/features/appointments/ui/RegisterAppointment/NewAppointment.jsx`** – Manejo del registro de nuevas citas.
-    **Pruebas que se pueden realizar:**
-   * **1.1.5 Crear cita con todos los campos obligatorios.**
-   * **1.1.6 Validar selección de paciente.**
-   * **1.1.7 Verificar fecha y hora.**
-   * **1.1.8 Comprobar estado inicial.**
-   * **1.1.9 Validar cálculo de pagos.**
+   * **Pruebas que se pueden realizar:**
+   * 1.1.5 Crear cita con todos los campos obligatorios.
+   * 1.1.6 Validar selección de paciente.
+   * 1.1.7 Verificar fecha y hora.
+   * 1.1.8 Comprobar estado inicial.
+   * 1.1.9 Validar cálculo de pagos.
 
 3. **`src/features/appointments/ui/EditAppointment/EditAppointment.jsx`** – Edición de citas existentes.
-    **Pruebas que se pueden realizar:**
-   * **1.1.10 Modificar fecha/hora.**
-   * **1.1.11 Cambiar estado de la cita.**
-   * **1.1.12 Actualizar información de pago.**
-   * **1.1.13 Verificar persistencia de cambios.**
+   * **Pruebas que se pueden realizar:**
+   * 1.1.10 Modificar fecha/hora.
+   * 1.1.11 Cambiar estado de la cita.
+   * 1.1.12 Actualizar información de pago.
+   * 1.1.13 Verificar persistencia de cambios.
 
 ### 1.2 Componentes de Citas Completadas
 
