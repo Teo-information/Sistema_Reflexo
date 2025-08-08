@@ -60,11 +60,11 @@ Este módulo maneja la gestión de citas y sus estados, incluyendo la creación,
 ### 1.3 Componentes de Calendario
 
 * **`src/features/calendar/ui/Calendar.jsx`** – Vista de calendario.
-   **Pruebas que se pueden realizar:**
-   1.3.1 Mostrar citas por estado.
-   1.3.2 Navegación entre fechas.
-   1.3.3 Interacción con eventos.
-   1.3.4 Actualización en tiempo real.
+* **Pruebas que se pueden realizar:**
+* 1.3.1 Mostrar citas por estado.
+* 1.3.2 Navegación entre fechas.
+* 1.3.3 Interacción con eventos.
+* 1.3.4 Actualización en tiempo real.
 
 * **`src/features/calendar/service/calendarService.js`** – Servicios del calendario.
 
@@ -75,8 +75,8 @@ Este módulo maneja la gestión de citas y sus estados, incluyendo la creación,
 ### 1.4 Hooks Personalizados
 
 * **`src/features/appointments/hook/appointmentsHook.js`**
-   - `useAppointments`: Maneja el estado y lógica de citas.
-   - `usePatients`: Gestiona la información de pacientes.
+* `useAppointments`: Maneja el estado y lógica de citas.
+* `usePatients`: Gestiona la información de pacientes.
 
 ### 1.5 Componentes de UI Reutilizables
 
@@ -89,16 +89,16 @@ Este módulo maneja la gestión de citas y sus estados, incluyendo la creación,
 * **`src/components/PdfTemplates/ExcelPreviewTable.jsx`** – Vista previa de Excel.
 
 * **`src/components/PdfTemplates/TicketPDF.jsx`** – Generación de tickets.
-   **Pruebas que se pueden realizar:**
-   1.5.1 Generación de PDF.
-   1.5.2 Datos correctos.
-   1.5.3 Formato adecuado.
+* **Pruebas que se pueden realizar:**
+* 1.5.1 Generación de PDF.
+* 1.5.2 Datos correctos.
+* 1.5.3 Formato adecuado.
 
 * **`src/components/PdfTemplates/FichaPDF.jsx`** – Generación de fichas.
-   **Pruebas que se pueden realizar:**
-   1.5.4 Generación de ficha.
-   1.5.5 Información completa.
-   1.5.6 Formato correcto.
+* **Pruebas que se pueden realizar:**
+* 1.5.4 Generación de ficha.
+* 1.5.5 Información completa.
+* 1.5.6 Formato correcto.
 
 ### 1.6 Servicios y Utilidades
 
