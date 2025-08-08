@@ -30,7 +30,7 @@ Este módulo maneja la gestión de citas y sus estados, incluyendo la creación,
 ### 1.1 Componentes Principales
 
 1. **`src/features/appointments/ui/appointments.jsx`** – Componente principal para la gestión de citas.
-    **Pruebas que se pueden realizar:**
+   * **Pruebas que se pueden realizar:**
     1.1.1 Paginación de resultados.
     1.1.2 Filtros de búsqueda.
     1.1.3 Ordenamiento de columnas.
