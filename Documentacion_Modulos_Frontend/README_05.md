@@ -2,24 +2,24 @@
 
 ## Índice
 
-1. **Descripción General**
-    1.1 Componentes Principales
-    1.2 Componentes de Citas Completadas
-    1.3 Componentes de Calendario
-    1.4 Hooks Personalizados
-    1.5 Componentes de UI Reutilizables
-    1.6 Servicios y Utilidades
-    1.7 Funcionalidades Principales
-    1.8 Interacciones con API Backend
-    1.9 Estilos
+1. [Descripción General](#1-descripción-general)  
+    1.1 [Componentes Principales](#11-componentes-principales)  
+    1.2 [Componentes de Citas Completadas](#12-componentes-de-citas-completadas)  
+    1.3 [Componentes de Calendario](#13-componentes-de-calendario)  
+    1.4 [Hooks Personalizados](#14-hooks-personalizados)  
+    1.5 [Componentes de UI Reutilizables](#15-componentes-de-ui-reutilizables)  
+    1.6 [Servicios y Utilidades](#16-servicios-y-utilidades)  
+    1.7 [Funcionalidades Principales](#17-funcionalidades-principales)  
+    1.8 [Interacciones con API Backend](#18-interacciones-con-api-backend)  
+    1.9 [Estilos](#19-estilos)  
 
-2. **Flujo de Interacción Usuario–Sistema**
-    2.1 Listado de Citas (Vista Principal)
-    2.2 Creación de Citas
-    2.3 Edición de Citas
-    2.4 Calendario de Citas
-    2.5 Generación de Documentos
-    2.6 Citas Completadas
+2. [Flujo de Interacción Usuario–Sistema](#2-flujo-de-interacción-usuario–sistema)  
+    2.1 [Listado de Citas](#21-listado-de-citas-vista-principal)  
+    2.2 [Creación de Citas](#22-creación-de-citas)  
+    2.3 [Edición de Citas](#23-edición-de-citas)  
+    2.4 [Calendario de Citas](#24-calendario-de-citas)  
+    2.5 [Generación de Documentos](#25-generación-de-documentos)  
+    2.6 [Citas Completadas](#26-citas-completadas)  
 
 ---
 
