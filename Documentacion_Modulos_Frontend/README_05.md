@@ -1,206 +1,252 @@
-# Guía de Pruebas Frontend - Módulo 05_appointments_status
+# Guía de Pruebas Frontend – Módulo **05\_appointments\_status**
 
-## Descripción General
+## Índice
+
+1. **Descripción General**
+    1.1 Componentes Principales
+    1.2 Componentes de Citas Completadas
+    1.3 Componentes de Calendario
+    1.4 Hooks Personalizados
+    1.5 Componentes de UI Reutilizables
+    1.6 Servicios y Utilidades
+    1.7 Funcionalidades Principales
+    1.8 Interacciones con API Backend
+    1.9 Estilos
+
+2. **Flujo de Interacción Usuario–Sistema**
+    2.1 Listado de Citas (Vista Principal)
+    2.2 Creación de Citas
+    2.3 Edición de Citas
+    2.4 Calendario de Citas
+    2.5 Generación de Documentos
+    2.6 Citas Completadas
+
+---
+
+## 1. Descripción General
+
 Este módulo maneja la gestión de citas y sus estados, incluyendo la creación, actualización, visualización y eliminación de citas, así como la generación de tickets y reportes.
 
-1. **Componentes Principales:**
-   - <mcfile name="appointments.jsx" path="src/features/appointments/ui/appointments.jsx"></mcfile>: Componente principal para la gestión de citas
-   Pruebas que se pueden hacer:
-- Paginación de resultados
-- Filtros de búsqueda
-- Ordenamiento de columnas
-- Actualización en tiempo real
-   - <mcfile name="NewAppointment.jsx" path="src/features/appointments/ui/RegisterAppointment/NewAppointment.jsx"></mcfile>: Manejo de registro de nuevas citas
-   Pruebas que se pueden hacer:
-- Crear cita con todos los campos obligatorios
-- Validar selección de paciente
-- Verificar selección de fecha y hora
-- Comprobar selección de estado inicial
-- Validar cálculo de pagos
-   - <mcfile name="EditAppointment.jsx" path="src/features/appointments/ui/EditAppointment/EditAppointment.jsx"></mcfile>: Componente para edición de citas
-   Pruebas que se pueden hacer:
-- Modificar fecha/hora
-- Cambiar estado de la cita
-- Actualizar información de pago
-- Verificar persistencia de cambios
+### 1.1 Componentes Principales
 
-1.1 **Componentes de Citas Completadas:**
-   - <mcfile name="appointmentsComplete.jsx" path="src/features/appointmentsComplete/ui/appointmentsComplete.jsx"></mcfile>: Vista de citas completadas
-   - <mcfile name="appointmentsCompleteService.js" path="src/features/appointmentsComplete/service/appointmentsCompleteService.js"></mcfile>: Servicios para citas completadas
-   - <mcfile name="appointmentsCompleteHook.js" path="src/features/appointmentsComplete/hook/appointmentsCompleteHook.js"></mcfile>: Hook personalizado
+1. **`src/features/appointments/ui/appointments.jsx`** – Componente principal para la gestión de citas.
+    **Pruebas que se pueden realizar:**
+    1.1.1 Paginación de resultados.
+    1.1.2 Filtros de búsqueda.
+    1.1.3 Ordenamiento de columnas.
+    1.1.4 Actualización en tiempo real.
 
-1.2 **Componentes de Calendario:**
-   - <mcfile name="Calendar.jsx" path="src/features/calendar/ui/Calendar.jsx"></mcfile>: Vista de calendario
-   Pruebas que se pueden hacer:
-- Mostrar citas por estado
-- Navegación entre fechas
-- Interacción con eventos
-- Actualización en tiempo real
-   - <mcfile name="calendarService.js" path="src/features/calendar/service/calendarService.js"></mcfile>: Servicios del calendario
-   - <mcfile name="calendarHook.js" path="src/features/calendar/hook/calendarHook.js"></mcfile>: Hook para el calendario
-   - <mcfile name="CalendarOverrides.css" path="src/features/calendar/ui/CalendarOverrides.css"></mcfile>: Estilos del calendario
+2. **`src/features/appointments/ui/RegisterAppointment/NewAppointment.jsx`** – Manejo del registro de nuevas citas.
+    **Pruebas que se pueden realizar:**
+    1.1.5 Crear cita con todos los campos obligatorios.
+    1.1.6 Validar selección de paciente.
+    1.1.7 Verificar fecha y hora.
+    1.1.8 Comprobar estado inicial.
+    1.1.9 Validar cálculo de pagos.
 
-2. **Hooks Personalizados:**
-   - <mcfile name="appointmentsHook.js" path="src/features/appointments/hook/appointmentsHook.js"></mcfile>: 
-     - `useAppointments`: Maneja el estado y lógica de las citas
-     - `usePatients`: Gestiona la información de pacientes relacionada con las citas
+3. **`src/features/appointments/ui/EditAppointment/EditAppointment.jsx`** – Edición de citas existentes.
+    **Pruebas que se pueden realizar:**
+    1.1.10 Modificar fecha/hora.
+    1.1.11 Cambiar estado de la cita.
+    1.1.12 Actualizar información de pago.
+    1.1.13 Verificar persistencia de cambios.
 
-3. **Componentes de UI Reutilizables:**
-   - <mcfile name="CustomTimeFilter.jsx" path="src/components/DateSearch/CustomTimeFilter.jsx"></mcfile>: Filtro de tiempo para citas
-   - <mcfile name="CustomSearch.jsx" path="src/components/Search/CustomSearch.jsx"></mcfile>: Búsqueda personalizada
-   - <mcfile name="ModeloTable.jsx" path="src/components/Table/Tabla.jsx"></mcfile>: Tabla reutilizable
-   - <mcfile name="ExcelPreviewTable.jsx" path="src/components/PdfTemplates/ExcelPreviewTable.jsx"></mcfile>: Vista previa de Excel
-   - <mcfile name="TicketPDF.jsx" path="src/components/PdfTemplates/TicketPDF.jsx"></mcfile>: Generación de tickets
-   Pruebas que se pueden hacer:
-- Generación de PDF
-- Datos correctos
-- Formato adecuado
-   - <mcfile name="FichaPDF.jsx" path="src/components/PdfTemplates/FichaPDF.jsx"></mcfile>: Generación de fichas
-   Pruebas que se pueden hacer:
-- Generación de ficha
-- Información completa
-- Formato correcto
+### 1.2 Componentes de Citas Completadas
 
-4. **Servicios y Utilidades:**
-   - <mcfile name="ToastContext.jsx" path="src/services/toastify/ToastContext.jsx"></mcfile>: Sistema de notificaciones
-   - <mcfile name="Toast.jsx" path="src/services/toastify/Toast.jsx"></mcfile>: Componente de notificaciones
+* **`src/features/appointmentsComplete/ui/appointmentsComplete.jsx`** – Vista de citas completadas.
+* **`src/features/appointmentsComplete/service/appointmentsCompleteService.js`** – Servicios de citas completadas.
+* **`src/features/appointmentsComplete/hook/appointmentsCompleteHook.js`** – Hook personalizado para citas completadas.
 
-5. **Funcionalidades Principales:**
-   - Gestión de citas (CRUD completo)
-   - Manejo de estados de citas
-   - Generación de documentos (tickets y fichas)
-   - Búsqueda y filtrado de citas
-   - Validaciones de formularios
-   - Notificaciones de sistema
-   - Integración con el módulo de pacientes
+### 1.3 Componentes de Calendario
 
-6. **Interacciones con API Backend:**
-   El frontend interactúa con varios endpoints del backend:
-   - `/api/appointments`: Gestión de citas
-   - `/api/patients`: Integración con pacientes
-   - `/api/appointments/status`: Manejo de estados de citas
+* **`src/features/calendar/ui/Calendar.jsx`** – Vista de calendario.
+   **Pruebas que se pueden realizar:**
+   1.3.1 Mostrar citas por estado.
+   1.3.2 Navegación entre fechas.
+   1.3.3 Interacción con eventos.
+   1.3.4 Actualización en tiempo real.
 
-7. **Estilos:**
-   - <mcfile name="appointments.module.css" path="src/features/appointments/ui/appointments.module.css"></mcfile>
-   - <mcfile name="NewAppointment.module.css" path="src/features/appointments/ui/RegisterAppointment/NewAppointment.module.css"></mcfile>
-   - <mcfile name="appointmentsComplete.module.css" path="src/features/appointmentsComplete/ui/appointmentsComplete.module.css"></mcfile>
+* **`src/features/calendar/service/calendarService.js`** – Servicios del calendario.
 
-Todas estas interacciones están manejadas a través de hooks personalizados y servicios que centralizan la lógica de negocio y el manejo del estado de la aplicación.
+* **`src/features/calendar/hook/calendarHook.js`** – Hook para calendario.
 
-## ---------------------------------------------------------------------
+* **`src/features/calendar/ui/CalendarOverrides.css`** – Estilos personalizados del calendario.
 
+### 1.4 Hooks Personalizados
 
+* **`src/features/appointments/hook/appointmentsHook.js`**
+   - `useAppointments`: Maneja el estado y lógica de citas.
+   - `usePatients`: Gestiona la información de pacientes.
 
-          
-# Flujo de Interacción Usuario-Sistema en el Módulo de Citas
+### 1.5 Componentes de UI Reutilizables
 
-## 1. Listado de Citas (Vista Principal)
+* **`src/components/DateSearch/CustomTimeFilter.jsx`** – Filtro de tiempo.
 
-### Usuario → Frontend
-- El usuario accede a la vista principal de citas (<mcfile name="appointments.jsx" path="src/features/appointments/ui/appointments.jsx"></mcfile>)
-- Interactúa con filtros de búsqueda (<mcfile name="CustomSearch.jsx" path="src/components/Search/CustomSearch.jsx"></mcfile>)
-- Utiliza filtros de tiempo (<mcfile name="CustomTimeFilter.jsx" path="src/components/DateSearch/CustomTimeFilter.jsx"></mcfile>)
-- Navega por la paginación
+* **`src/components/Search/CustomSearch.jsx`** – Búsqueda personalizada.
 
-### Frontend → Backend
-- El hook <mcfile name="appointmentsHook.js" path="src/features/appointments/hook/appointmentsHook.js"></mcfile> gestiona las peticiones
-- Envía solicitudes a `/api/appointments` con parámetros de:
-  - Búsqueda
-  - Filtros de tiempo
-  - Paginación
+* **`src/components/Table/Tabla.jsx`** – Tabla reutilizable.
 
-### Backend → Frontend → Usuario
-- El backend responde con datos paginados
-- El frontend actualiza el estado mediante `useAppointments`
-- Se muestra la información en <mcfile name="ModeloTable.jsx" path="src/components/Table/Tabla.jsx"></mcfile>
-- Las notificaciones de éxito/error se muestran via <mcfile name="Toast.jsx" path="src/services/toastify/Toast.jsx"></mcfile>
+* **`src/components/PdfTemplates/ExcelPreviewTable.jsx`** – Vista previa de Excel.
 
-## 2. Creación de Citas
+* **`src/components/PdfTemplates/TicketPDF.jsx`** – Generación de tickets.
+   **Pruebas que se pueden realizar:**
+   1.5.1 Generación de PDF.
+   1.5.2 Datos correctos.
+   1.5.3 Formato adecuado.
 
-### Usuario → Frontend
-- Usuario accede al formulario de nueva cita (<mcfile name="NewAppointment.jsx" path="src/features/appointments/ui/RegisterAppointment/NewAppointment.jsx"></mcfile>)
-- Completa campos obligatorios:
-  - Selección de paciente
-  - Fecha/hora
-  - Estado inicial
-  - Información de pago
+* **`src/components/PdfTemplates/FichaPDF.jsx`** – Generación de fichas.
+   **Pruebas que se pueden realizar:**
+   1.5.4 Generación de ficha.
+   1.5.5 Información completa.
+   1.5.6 Formato correcto.
 
-### Frontend → Backend
-- Validaciones de formulario en frontend
-- `useAppointments` prepara los datos
-- Envía POST a `/api/appointments`
-- Si hay nuevo paciente, interactúa con `/api/patients`
+### 1.6 Servicios y Utilidades
 
-### Backend → Frontend → Usuario
-- Respuesta de creación exitosa/error
-- Actualización automática de la lista de citas
-- Notificación via <mcfile name="ToastContext.jsx" path="src/services/toastify/ToastContext.jsx"></mcfile>
-- Redirección a la vista principal
+* **`src/services/toastify/ToastContext.jsx`** – Sistema de notificaciones.
+* **`src/services/toastify/Toast.jsx`** – Componente de notificaciones.
 
-## 3. Edición de Citas
+### 1.7 Funcionalidades Principales
 
-### Usuario → Frontend
-- Accede a <mcfile name="EditAppointment.jsx" path="src/features/appointments/ui/EditAppointment/EditAppointment.jsx"></mcfile>
-- Modifica campos:
-  - Fecha/hora
-  - Estado
-  - Información de pago
+* 1.7.1 Gestión de citas (CRUD completo).
+* 1.7.2 Manejo de estados de citas.
+* 1.7.3 Generación de documentos (tickets y fichas).
+* 1.7.4 Búsqueda y filtrado.
+* 1.7.5 Validaciones de formularios.
+* 1.7.6 Notificaciones del sistema.
+* 1.7.7 Integración con módulo de pacientes.
 
-### Frontend → Backend
-- Validaciones en frontend
-- PUT a `/api/appointments/{id}`
-- Para cambios de estado: PUT a `/api/appointments/status/{id}`
+### 1.8 Interacciones con API Backend
 
-### Backend → Frontend → Usuario
-- Confirmación de actualización
-- Actualización en tiempo real de la vista
-- Notificación de cambios
+* `GET/POST/PUT /api/appointments` – Gestión de citas.
+* `GET/POST /api/patients` – Integración con pacientes.
+* `PUT /api/appointments/status` – Manejo de estados.
 
-## 4. Calendario de Citas
+### 1.9 Estilos
 
-### Usuario → Frontend
-- Interactúa con <mcfile name="Calendar.jsx" path="src/features/calendar/ui/Calendar.jsx"></mcfile>
-- Navega entre fechas
-- Filtra por estados
+* **`src/features/appointments/ui/appointments.module.css`**
+* **`src/features/appointments/ui/RegisterAppointment/NewAppointment.module.css`**
+* **`src/features/appointmentsComplete/ui/appointmentsComplete.module.css`**
 
-### Frontend → Backend
-- <mcfile name="calendarService.js" path="src/features/calendar/service/calendarService.js"></mcfile> gestiona peticiones
-- Solicitudes a endpoints de citas pendientes y completadas
+---
 
-### Backend → Frontend → Usuario
-- Datos de citas filtrados por fecha
-- Actualización del calendario
-- Vista con estilos de <mcfile name="CalendarOverrides.css" path="src/features/calendar/ui/CalendarOverrides.css"></mcfile>
+## 2. Flujo de Interacción Usuario–Sistema
 
-## 5. Generación de Documentos
+### 2.1 Listado de Citas (Vista Principal)
 
-### Usuario → Frontend
-- Solicita generación de ticket (<mcfile name="TicketPDF.jsx" path="src/components/PdfTemplates/TicketPDF.jsx"></mcfile>)
-- Solicita ficha (<mcfile name="FichaPDF.jsx" path="src/components/PdfTemplates/FichaPDF.jsx"></mcfile>)
+**Usuario → Frontend**
 
-### Frontend → Backend
-- Solicitud de datos necesarios para documentos
-- Peticiones a endpoints correspondientes
+* Accede a `appointments.jsx`.
+* Usa filtros (`CustomSearch.jsx`) y filtros de tiempo (`CustomTimeFilter.jsx`).
+* Navega por paginación.
 
-### Backend → Frontend → Usuario
-- Datos para documentos
-- Generación de PDF en frontend
-- Descarga automática o visualización
+**Frontend → Backend**
 
-## 6. Citas Completadas
+* `appointmentsHook.js` envía solicitudes a `/api/appointments` con búsqueda, filtros y paginación.
 
-### Usuario → Frontend
-- Accede a vista de citas completadas (<mcfile name="appointmentsComplete.jsx" path="src/features/appointmentsComplete/ui/appointmentsComplete.jsx"></mcfile>)
-- Utiliza filtros y búsqueda
+**Backend → Frontend → Usuario**
 
-### Frontend → Backend
-- <mcfile name="appointmentsCompleteService.js" path="src/features/appointmentsComplete/service/appointmentsCompleteService.js"></mcfile> gestiona peticiones
-- Solicitudes filtradas a endpoint de citas completadas
+* Devuelve datos paginados.
+* `useAppointments` actualiza estado.
+* Muestra en `Tabla.jsx`.
+* Notificaciones con `Toast.jsx`.
 
-### Backend → Frontend → Usuario
-- Lista de citas completadas
-- Actualización de vista
-- Exportación a Excel si se solicita (<mcfile name="ExcelPreviewTable.jsx" path="src/components/PdfTemplates/ExcelPreviewTable.jsx"></mcfile>)
+---
 
-Cada interacción está respaldada por el sistema de notificaciones que informa al usuario sobre el éxito o fracaso de sus acciones, manteniendo una experiencia fluida y retroalimentación constante.
-        
+### 2.2 Creación de Citas
+
+**Usuario → Frontend**
+
+* Accede a `NewAppointment.jsx`.
+* Completa datos obligatorios.
+
+**Frontend → Backend**
+
+* Validaciones.
+* Envía **POST** a `/api/appointments`.
+* Si es nuevo paciente: `/api/patients`.
+
+**Backend → Frontend → Usuario**
+
+* Confirma creación.
+* Actualiza lista.
+* Notifica con `ToastContext.jsx`.
+* Redirige a vista principal.
+
+---
+
+### 2.3 Edición de Citas
+
+**Usuario → Frontend**
+
+* Accede a `EditAppointment.jsx`.
+* Modifica datos.
+
+**Frontend → Backend**
+
+* Validaciones.
+* **PUT** a `/api/appointments/{id}`.
+* Cambios de estado: `/api/appointments/status/{id}`.
+
+**Backend → Frontend → Usuario**
+
+* Confirma cambios.
+* Actualiza vista.
+* Notifica cambios.
+
+---
+
+### 2.4 Calendario de Citas
+
+**Usuario → Frontend**
+
+* Usa `Calendar.jsx`.
+* Filtra por estado y fecha.
+
+**Frontend → Backend**
+
+* `calendarService.js` consulta citas pendientes y completadas.
+
+**Backend → Frontend → Usuario**
+
+* Devuelve datos filtrados.
+* Actualiza vista con `CalendarOverrides.css`.
+
+---
+
+### 2.5 Generación de Documentos
+
+**Usuario → Frontend**
+
+* Solicita ticket (`TicketPDF.jsx`).
+* Solicita ficha (`FichaPDF.jsx`).
+
+**Frontend → Backend**
+
+* Pide datos a los endpoints.
+
+**Backend → Frontend → Usuario**
+
+* Devuelve datos.
+* Genera PDF y descarga.
+
+---
+
+### 2.6 Citas Completadas
+
+**Usuario → Frontend**
+
+* Accede a `appointmentsComplete.jsx`.
+* Filtra y busca.
+
+**Frontend → Backend**
+
+* `appointmentsCompleteService.js` envía solicitud filtrada.
+
+**Backend → Frontend → Usuario**
+
+* Devuelve lista de citas completadas.
+* Actualiza vista.
+* Exporta a Excel (`ExcelPreviewTable.jsx`).
+
+---
+## APOYARSE DE LA PAGINA DE REFLEXO PARA VER COMO ESTA ESTABLECIDO SU FUNCIONAMIENTO
