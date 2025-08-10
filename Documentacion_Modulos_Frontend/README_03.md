@@ -1,7 +1,3 @@
-He formateado y organizado la guía de pruebas del módulo 03\_patients\_diagnoses para mejorar su lectura. He corregido los espacios, añadido viñetas y una estructura de índice, pero no he alterado ningún detalle técnico de la documentación original.
-
------
-
 # Guía de Pruebas Frontend - Módulo 03\_patients\_diagnoses
 
 ## 1\. Descripción General
@@ -55,6 +51,11 @@ Este *hook* se encarga de la lógica principal para la gestión de pacientes. Se
       * Carga y actualización de datos.
       * Búsqueda y eliminación de pacientes.
       * Manejo de la paginación.
+  * `handleAction` : Hook principal que maneja:
+      * Carga de pacientes
+      * Paginación
+      * Búsqueda
+      * Actualización de datos
 
 ### 2.2.2 Hook de Citas
 
